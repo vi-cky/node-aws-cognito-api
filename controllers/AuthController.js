@@ -3,6 +3,7 @@ require('dotenv').config();
 const Cognito = require('../cognito-services');
 
 async function SignUp(req, res) {
+    console.log("Req",req.body.email)
     const response = await Cognito.signUp(req.body.email,req.body.password);
     res.json(response)
 }
